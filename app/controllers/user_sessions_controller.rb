@@ -10,8 +10,7 @@ class UserSessionsController < ApplicationController
         if @user
             redirect_back_or_to(dashboard_path, notice: "You have logged in successfully")
         else
-            flash.now[:alert] = "Log in failed"
-            redirect_to login_path
+            redirect_to login_path, notice: "Log in failed"
         end
     end
 

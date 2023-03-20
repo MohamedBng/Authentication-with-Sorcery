@@ -12,8 +12,7 @@ class UserRegistrationsController < ApplicationController
         auto_login(@user)
         redirect_to dashboard_path, notice: "You successfully registered"
       else
-        flash.now[:alert] = "Registration failed"
-        redirect_to register_path
+        redirect_to register_path, notice: "Registration failed"
       end
     end
   
